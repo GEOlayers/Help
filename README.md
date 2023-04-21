@@ -25,3 +25,28 @@ If you don't want to start from scratch you can also choose a sample project to 
 Whenever you open a project that already contains Mapcomps you can see and select them clicking  top left in the main window. This will open the Mapcomp list.
 
 As you hover over a Mapcomp the following buttons appear:
+
+
+# MapTiler Data
+Some functions of GEOlayers are only possible because we partnered with MapTiler as a data provider.
+
+This partnership allows us to provide these features:
+
+Stylized Mapcomp Imagery (The imagery styles with the MapTiler icon)
+Find Features by clicking the preview map
+Mapcomp labels in different languages
+Watermask Mapcomps from the toolbar
+Feature import for the current view to the browser
+Drawing 3D buildings from the toolbar
+After the free trial to check it out you'll need a Flex plan on MapTiler Cloud to enable these features.
+
+You can of course use GEOlayers without it.
+
+# Disclaimer
+The terms of use of the map service providers apply. Content must be attributed unless otherwise agreed with the map service provider.
+
+GEOlayers cannot ensure that every tileserver, geocoding-service, or other external geodata source work properly all the time. Certain functions will not work if remote servers are down, which are out of our control.
+
+The creators of GEOlayers are not responsible for the topicality, correctness, completeness, or quality of the information provided or acquired with this software from the aforementioned exernal map service providers. GEOlayers cannot be held liable for damages caused by the use of any information provided, including any kind of information which is incomplete or incorrect. All offers are unbinding and without obligation.
+
+The creators of GEOlayers do not claim any ownership or license for the images and data you acquire with this software from any map service provider.
