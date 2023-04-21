@@ -1,2 +1,2 @@
-# Help
+# GEOLayers Help
 Help for GEOLayers.
