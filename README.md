@@ -64,6 +64,34 @@ Arguments:
 
 This function returns the applied view object or undefined if anything goes wrong.
 
+### geolayers3.fitViewAtTime(comp, bbox[, forceKeyframe[, time]])
+Use it to set or animate views of Mapcomps by a bounding box. 
+
+Arguments:
+- comp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
+- bbox: A geojson bounding box Array [LongitudeMin, LatitudeMin, LongitudeMax, LatitudeMax] (WGS 84)
+- forceKeyframe: Set this to true to set a keyframe even if the property is not keyframed yet.
+-time: The time in the containing comp to set the value. If it is undefined it takes the current time.
+
+This function returns the applied view object or undefined if anything goes wrong.
+
+### geolayers3.removeMapcompControlKeys(comp)
+Removes all keyframes from the Latitude, Longitude, Zoom, Bearing and Pitch controls of the specified Mapcomp. 
+
+**Arguments:**
+- comp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
+
+### geolayers3.getMapcomps()
+Returns all mapcomps of the project.
+
+### geolayers3.getMapcompAnchor(mapcomp)
+Returns the mapcomp's anchor layer in their containing comp. 
+**Arguments:**
+- mapcomp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
+
+### geolayers3.getLabelTemplateComps()
+Returns the projects Label Template Compostioions or an empty Array.
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # MapTiler Data
