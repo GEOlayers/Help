@@ -94,6 +94,78 @@ Returns the mapcomp's anchor layer in their containing comp.
 ### geolayers3.getLabelTemplateComps()
 Returns the projects Label Template Compostioions or an empty Array.
 
+### geolayers3.addLabel(comp, labelTemplateComp, labelData)
+Use it to add Labels to Mapcomps.
+
+**Arguments:**
+- comp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
+- labelTemplateComp: A composition, label template name or an integer representing the number of the label template in the project.
+- labelData: An object with the following required float properties: "latitude" or "lat" and "longitude" or "lon" plus the string properties the label template requires like "name" ect.
+
+This function returns the label layer or undefined if anything goes wrong.
+
+### geolayers3.updateLabelData(labelLayer, newLabelData)
+
+Use it to update data in already created Template Labels. 
+
+**Arguments:**
+- labelLayer: A Label Layer
+- newLabelData: An object with the string properties the label template requires like "name" ect.
+
+This function returns the label layer or undefined if anything goes wrong.
+
+### geolayers3.getLayersGeoPosition(layer)
+Use it to get longitude and latitude of a layer in relation to a Mapcomp. 
+**Arguments:**
+- layer: A layer in a mapcomps containing comp
+- This function returns an array [longitude, latitude] or undefined if anything goes wrong.
+
+### geolayers3.fetchText(url, callback[, initObject])
+Hit an url and get back the response as text. 
+**Arguments:**
+- url: The url you want to fetch.
+- callback: A function(error, data) that is called async when the response has been processed.
+- initObject: Please search the fetch API docs for the init object.
+
+Note that this is an async function. Means that any scripting that has to be done after the request needs to be placed inside the callback function. It takes an error as the first and the responded data as the second argument and is called after the response has been processed.
+
+### geolayers3.fetchJson(url, callback[, initObject])
+A quick way to hit json apis.
+**Arguments:**
+url: The url you want to fetch.
+callback: A function(error, data) that is called async when the response has been processed.
+initObject: Please search the fetch API docs for the init object.
+Note that this is an async function. Means that any scripting that has to be done after the request needs to be placed inside the callback function. It takes an error as the first and the responded data as the second argument and is called after the response has been processed.
+
+### geolayers3.geocode(searchString, callback[, options])
+A quick way to geocode a string. Pretty much the same as if you would type it into the searchbar. 
+
+**Arguments:**
+- searchString: The search term or address you want to geocode.
+- callback: A function(error, features) that is called async when the response has been processed.
+- options: An options object with the following possible ISO639 string property: "language". By default the selected Mapcomp's setting will be used.
+
+Note that this is an async function. Means that any scripting that has to be done after the request needs to be placed inside the callback function. It takes an error as the first and an array of geojson features as the second argument and is called after the response has been processed. This function uses OpenStreetMap Nominatim search engine. You shouldn't bulk geocode placenames. The geolayers scripting api will queue multiple requests at the same time according to the Nominatim usage policy.
+
+### geolayers3.watch(fileOrFolder, callback[, options])
+Watches a file or folder for changes. If a file or folder is allready being watched it will be canceled. 
+
+**Arguments:**
+- fileOrFolder: A File or Folder object to watch.
+- callback: A function(file) or function(changedFilesInFolder, allFilesInFolder) that is called each time the file or a file in the folder changes. If the scripting api is busy finalizing(or any other async method) the function will be called after the next interval.
+- options: An options object with the following possible integer property: "interval" which is the intervall between the checks in ms defaults to 10000.
+
+### geolayers3.watchCsv(csvFile, callback[, options])
+Watches a file or folder for changes. If a file or folder is allready being watched it will be canceled. 
+
+**Arguments:**
+- csvFile: A File object referencing a .csv, .tsv or .txt file to watch.
+- callback: A function(changedRows, allRows) that is called each time the csv file changes. If the scripting api is busy finalizing(or any other async method) the function will be called after the next interval.
+- options: An options object with the following possible properties: "interval" integer which is the intervall between the checks in ms, defaults to 10000. "delimiter" string used to split values of the file, defaults to ",".
+
+### geolayers3.unwatch()
+Stops the current watch task.
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # MapTiler Data
