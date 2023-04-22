@@ -151,17 +151,17 @@ Note that this is an async function. Means that any scripting that has to be don
 Watches a file or folder for changes. If a file or folder is allready being watched it will be canceled. 
 
 **Arguments:**
-- fileOrFolder: A File or Folder object to watch.
-- callback: A function(file) or function(changedFilesInFolder, allFilesInFolder) that is called each time the file or a file in the folder changes. If the scripting api is busy finalizing(or any other async method) the function will be called after the next interval.
-- options: An options object with the following possible integer property: "interval" which is the intervall between the checks in ms defaults to 10000.
+- **fileOrFolder:** A File or Folder object to watch.
+- **callback:** A function(file) or function(changedFilesInFolder, allFilesInFolder) that is called each time the file or a file in the folder changes. If the scripting api is busy finalizing(or any other async method) the function will be called after the next interval.
+- **options:** An options object with the following possible integer property: "interval" which is the intervall between the checks in ms defaults to 10000.
 
 ### geolayers3.watchCsv(csvFile, callback[, options])
 Watches a file or folder for changes. If a file or folder is allready being watched it will be canceled. 
 
 **Arguments:**
-- csvFile: A File object referencing a .csv, .tsv or .txt file to watch.
-- callback: A function(changedRows, allRows) that is called each time the csv file changes. If the scripting api is busy finalizing(or any other async method) the function will be called after the next interval.
-- options: An options object with the following possible properties: "interval" integer which is the intervall between the checks in ms, defaults to 10000. "delimiter" string used to split values of the file, defaults to ",".
+- **csvFile:** A File object referencing a .csv, .tsv or .txt file to watch.
+- **callback:** A function(changedRows, allRows) that is called each time the csv file changes. If the scripting api is busy finalizing(or any other async method) the function will be called after the next interval.
+- **options:** An options object with the following possible properties: "interval" integer which is the intervall between the checks in ms, defaults to 10000. "delimiter" string used to split values of the file, defaults to ",".
 
 ### geolayers3.unwatch()
 Stops the current watch task.
@@ -170,7 +170,7 @@ Stops the current watch task.
 Adds fretures to the browser even from a file, a geocoding request, an overpass api query or a geojson object. 
 
 **Arguments:**
-- addObj: Can be one of the following objects:
+- **addObj:** Can be one of the following objects:
   - ExtendScript File object referencing a geospatial file
   - Url to a geospatial file. The url should contain the file extension.
 
