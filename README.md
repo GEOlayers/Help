@@ -38,12 +38,13 @@ Arguments:
   - file: A File object referencing an .aep or .aet file.
   - isLabelTemplateProject: Boolean, set to true if the project to import only contains Label Templates.
 
-#### geolayers3.finalize(comps, callback[, options])
+### geolayers3.finalize(comps, callback[, options])
 Use it to finalize Mapcomps. 
 Arguments:
-comps: Either one or an array of Mapcomp names, Mapcomps or comps that contain Mapcomps, or undefined to finalize all Mapcomps in the project.
-callback: A function (error, mapcomps) that is called async when all finalizations are done.
-options: An options object with the following possible boolean properties: "onlyCurrentFrame", "previewQuality", "onlyWorkArea" and "purgeImageryCache".
+- comps: Either one or an array of Mapcomp names, Mapcomps or comps that contain Mapcomps, or undefined to finalize all Mapcomps in the project.
+- callback: A function (error, mapcomps) that is called async when all finalizations are done.
+- options: An options object with the following possible boolean properties: "onlyCurrentFrame", "previewQuality", "onlyWorkArea" and "purgeImageryCache".
+
 Note that this is an async function. This means any scripting that has to be done after the finalization needs to be placed inside the callback function. It takes an error as the first and the finalized compositions as the second argument and is called after all finalizations are done.
 
 
