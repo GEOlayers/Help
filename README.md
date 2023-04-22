@@ -3,7 +3,7 @@
 
 GEOlayers is your new best friend when you want to design and animate maps. It hooks you up with up-to-date geospatial data and satellite imagery. It lets you design complex map styles with a few clicks and animate them in 3D space. Watch this tutorial to get started. Learn how to create Mapcomps, change styles, animate, and finalize them.
 
-## Mapcomps
+### Mapcomps
 
 ![mapcomp](https://user-images.githubusercontent.com/19971466/233547961-62f27e76-a9e3-4a64-815d-2f6af515c708.png)
 
