@@ -34,23 +34,23 @@ Find an overview of the functions the API exposes:
 ### geolayers3.importProject(file[, isLabelTemplateProject])
 Import a project to your current one. GEOlayers will sort everything into its project structure, take care of unique comp names and update expressions accordingly. 
 Arguments:
-  - file: A File object referencing an .aep or .aet file.
-  - isLabelTemplateProject: Boolean, set to true if the project to import only contains Label Templates.
+  - **file:** A File object referencing an .aep or .aet file.
+  - **isLabelTemplateProject:** Boolean, set to true if the project to import only contains Label Templates.
 
 ### geolayers3.finalize(comps, callback[, options])
 Use it to finalize Mapcomps. 
 Arguments:
-- comps: Either one or an array of Mapcomp names, Mapcomps or comps that contain Mapcomps, or undefined to finalize all Mapcomps in the project.
-- callback: A function (error, mapcomps) that is called async when all finalizations are done.
-- options: An options object with the following possible boolean properties: "onlyCurrentFrame", "previewQuality", "onlyWorkArea" and "purgeImageryCache".
+- **comps:** Either one or an array of Mapcomp names, Mapcomps or comps that contain Mapcomps, or undefined to finalize all Mapcomps in the project.
+- **callback:** A function (error, mapcomps) that is called async when all finalizations are done.
+- **options:** An options object with the following possible boolean properties: "onlyCurrentFrame", "previewQuality", "onlyWorkArea" and "purgeImageryCache".
 
 Note that this is an async function. This means any scripting that has to be done after the finalization needs to be placed inside the callback function. It takes an error as the first and the finalized compositions as the second argument and is called after all finalizations are done.
 
 ### geolayers3.duplicate(comp[, options])
 Use it to duplicate Mapcomps or comps that contain Mapcomps. This method also updates all related expressions. 
 **Arguments:**
-- comp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
-- options: An options object. Use it for naming the duplicates. If you're duplicating a Mapcomp use the property "newName". If you duplicate a containing comp use "newContainingCompName"
+- **comp:** A Mapcomp name, Mapcomp or comp that contains a Mapcomp
+- **options:** An options object. Use it for naming the duplicates. If you're duplicating a Mapcomp use the property "newName". If you duplicate a containing comp use "newContainingCompName"
 
 This function returns the duplicate comp or undefined if anything goes wrong.
 
@@ -58,10 +58,10 @@ This function returns the duplicate comp or undefined if anything goes wrong.
 Use it to set or animate views of Mapcomps.
 
 **Arguments:**
-- comp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
-- view: An object with the following float properties: "latitude", "longitude", "zoom", "bearing" and "pitch".
-- forceKeyframe: Set this to true to set a keyframe even if the property is not keyframed yet.
-- time: The time in the containing comp to set the value. If it is undefined it takes the current time.
+- **comp:** A Mapcomp name, Mapcomp or comp that contains a Mapcomp
+- **view:** An object with the following float properties: "latitude", "longitude", "zoom", "bearing" and "pitch".
+- **forceKeyframe:** Set this to true to set a keyframe even if the property is not keyframed yet.
+- **time:** The time in the containing comp to set the value. If it is undefined it takes the current time.
 
 This function returns the applied view object or undefined if anything goes wrong.
 
@@ -69,10 +69,10 @@ This function returns the applied view object or undefined if anything goes wron
 Use it to set or animate views of Mapcomps by a bounding box. 
 
 **Arguments:**
-- comp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
-- bbox: A geojson bounding box Array [LongitudeMin, LatitudeMin, LongitudeMax, LatitudeMax] (WGS 84)
-- forceKeyframe: Set this to true to set a keyframe even if the property is not keyframed yet.
--time: The time in the containing comp to set the value. If it is undefined it takes the current time.
+- **comp:** A Mapcomp name, Mapcomp or comp that contains a Mapcomp
+- **bbox:** A geojson bounding box Array [LongitudeMin, LatitudeMin, LongitudeMax, LatitudeMax] (WGS 84)
+- **forceKeyframe:** Set this to true to set a keyframe even if the property is not keyframed yet.
+- **time:** The time in the containing comp to set the value. If it is undefined it takes the current time.
 
 This function returns the applied view object or undefined if anything goes wrong.
 
@@ -80,7 +80,7 @@ This function returns the applied view object or undefined if anything goes wron
 Removes all keyframes from the Latitude, Longitude, Zoom, Bearing and Pitch controls of the specified Mapcomp. 
 
 **Arguments:**
-- comp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
+- **comp:** A Mapcomp name, Mapcomp or comp that contains a Mapcomp
 
 ### geolayers3.getMapcomps()
 Returns all mapcomps of the project.
@@ -89,7 +89,7 @@ Returns all mapcomps of the project.
 Returns the mapcomp's anchor layer in their containing comp. 
 
 **Arguments:**
-- mapcomp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
+- **mapcomp:** A Mapcomp name, Mapcomp or comp that contains a Mapcomp
 
 ### geolayers3.getLabelTemplateComps()
 Returns the projects Label Template Compostioions or an empty Array.
@@ -98,9 +98,9 @@ Returns the projects Label Template Compostioions or an empty Array.
 Use it to add Labels to Mapcomps.
 
 **Arguments:**
-- comp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
-- labelTemplateComp: A composition, label template name or an integer representing the number of the label template in the project.
-- labelData: An object with the following required float properties: "latitude" or "lat" and "longitude" or "lon" plus the string properties the label template requires like "name" ect.
+- **comp:** A Mapcomp name, Mapcomp or comp that contains a Mapcomp
+- **labelTemplateComp:** A composition, label template name or an integer representing the number of the label template in the project.
+- **labelData:** An object with the following required float properties: "latitude" or "lat" and "longitude" or "lon" plus the string properties the label template requires like "name" ect.
 
 This function returns the label layer or undefined if anything goes wrong.
 
@@ -109,41 +109,42 @@ This function returns the label layer or undefined if anything goes wrong.
 Use it to update data in already created Template Labels. 
 
 **Arguments:**
-- labelLayer: A Label Layer
-- newLabelData: An object with the string properties the label template requires like "name" ect.
+- **labelLayer:** A Label Layer
+- **newLabelData:** An object with the string properties the label template requires like "name" ect.
 
 This function returns the label layer or undefined if anything goes wrong.
 
 ### geolayers3.getLayersGeoPosition(layer)
 Use it to get longitude and latitude of a layer in relation to a Mapcomp. 
 **Arguments:**
-- layer: A layer in a mapcomps containing comp
-- This function returns an array [longitude, latitude] or undefined if anything goes wrong.
+- **layer:** A layer in a mapcomps containing comp
+
+This function returns an array [longitude, latitude] or undefined if anything goes wrong.
 
 ### geolayers3.fetchText(url, callback[, initObject])
 Hit an url and get back the response as text. 
 **Arguments:**
-- url: The url you want to fetch.
-- callback: A function(error, data) that is called async when the response has been processed.
-- initObject: Please search the fetch API docs for the init object.
+- **url:** The url you want to fetch.
+- **callback:** A function(error, data) that is called async when the response has been processed.
+- **initObject:** Please search the fetch API docs for the init object.
 
 Note that this is an async function. Means that any scripting that has to be done after the request needs to be placed inside the callback function. It takes an error as the first and the responded data as the second argument and is called after the response has been processed.
 
 ### geolayers3.fetchJson(url, callback[, initObject])
 A quick way to hit json apis.
 **Arguments:**
-url: The url you want to fetch.
-callback: A function(error, data) that is called async when the response has been processed.
-initObject: Please search the fetch API docs for the init object.
+**url:** The url you want to fetch.
+**callback:** A function(error, data) that is called async when the response has been processed.
+**initObject:** Please search the fetch API docs for the init object.
 Note that this is an async function. Means that any scripting that has to be done after the request needs to be placed inside the callback function. It takes an error as the first and the responded data as the second argument and is called after the response has been processed.
 
 ### geolayers3.geocode(searchString, callback[, options])
 A quick way to geocode a string. Pretty much the same as if you would type it into the searchbar. 
 
 **Arguments:**
-- searchString: The search term or address you want to geocode.
-- callback: A function(error, features) that is called async when the response has been processed.
-- options: An options object with the following possible ISO639 string property: "language". By default the selected Mapcomp's setting will be used.
+- **searchString:** The search term or address you want to geocode.
+- **callback:** A function(error, features) that is called async when the response has been processed.
+- **options:** An options object with the following possible ISO639 string property: "language". By default the selected Mapcomp's setting will be used.
 
 Note that this is an async function. Means that any scripting that has to be done after the request needs to be placed inside the callback function. It takes an error as the first and an array of geojson features as the second argument and is called after the response has been processed. This function uses OpenStreetMap Nominatim search engine. You shouldn't bulk geocode placenames. The geolayers scripting api will queue multiple requests at the same time according to the Nominatim usage policy.
 
