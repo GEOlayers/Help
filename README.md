@@ -194,13 +194,13 @@ url: "Url to geojson"
 }
 ```
 
-- callback: A function(error, data) that is called after the data has been imported to the browser.
-- options: An options object with the following possible properties:
-- returnData boolean: Set to true to return the data in the callback, defaults to false since this can be very slow for larger features.
-- pointGeometries boolean: Return the Feature as a Point representation, which is way faster for complex Geometries.
-- normalizeToFeatureArray boolean: Return an Array of Features instead of possible nested Feature Collections.
-- name string: A name for the root feature or feature collection that is imported.
-- namingProp string: The property that should be used to name all imported features.
+- **callback:** A function(error, data) that is called after the data has been imported to the browser.
+- **options:** An options object with the following possible properties:
+- **returnData boolean:** Set to true to return the data in the callback, defaults to false since this can be very slow for larger features.
+- **pointGeometries boolean:** Return the Feature as a Point representation, which is way faster for complex Geometries.
+- **normalizeToFeatureArray boolean:** Return an Array of Features instead of possible nested Feature Collections.
+- **name string:** A name for the root feature or feature collection that is imported.
+- **namingProp string:** The property that should be used to name all imported features.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
