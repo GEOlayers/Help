@@ -36,8 +36,8 @@ Import a project to your current one. GEOlayers will sort everything into its pr
 
 Arguments:
 
-  file: A File object referencing an .aep or .aet file.
-  isLabelTemplateProject: Boolean, set to true if the project to import only contains Label Templates.
+  - file: A File object referencing an .aep or .aet file.
+  - isLabelTemplateProject: Boolean, set to true if the project to import only contains Label Templates.
 
 #### geolayers3.finalize(comps, callback[, options])
 Use it to finalize Mapcomps. 
