@@ -46,6 +46,12 @@ Arguments:
 
 Note that this is an async function. This means any scripting that has to be done after the finalization needs to be placed inside the callback function. It takes an error as the first and the finalized compositions as the second argument and is called after all finalizations are done.
 
+### geolayers3.duplicate(comp[, options])
+Use it to duplicate Mapcomps or comps that contain Mapcomps. This method also updates all related expressions. 
+Arguments:
+- comp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
+- options: An options object. Use it for naming the duplicates. If you're duplicating a Mapcomp use the property "newName". If you duplicate a containing comp use "newContainingCompName"
+This function returns the duplicate comp or undefined if anything goes wrong.
 
 # MapTiler Data
 Some functions of GEOlayers are only possible because we partnered with MapTiler as a data provider.
