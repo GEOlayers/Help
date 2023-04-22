@@ -54,6 +54,18 @@ Arguments:
 
 This function returns the duplicate comp or undefined if anything goes wrong.
 
+### geolayers3.setViewAtTime(comp, view[, forceKeyframe[, time]])
+Use it to set or animate views of Mapcomps. 
+Arguments:
+- comp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
+- view: An object with the following float properties: "latitude", "longitude", "zoom", "bearing" and "pitch".
+- forceKeyframe: Set this to true to set a keyframe even if the property is not keyframed yet.
+- time: The time in the containing comp to set the value. If it is undefined it takes the current time.
+
+This function returns the applied view object or undefined if anything goes wrong.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # MapTiler Data
 Some functions of GEOlayers are only possible because we partnered with MapTiler as a data provider.
 
