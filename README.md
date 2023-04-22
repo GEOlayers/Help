@@ -275,25 +275,25 @@ type: "geojsonurl",
 url: "Url to geojson"
 }
 ```
-callback: A function(error, data) that is called after the data has been imported to the browser.
-options: An options object with the following possible properties:
-shapeLayerStyle: an index number, name or shape layer style object
-drawInsideMapcomp: defaults to false
-autoStrokeWidth: defaults to false
-simplify: defaults to true
-simplyfyByZoomRange: defaults to false
-simplificationZoomOffset: defaults to 0
-useTopoSimplificationIfPossible: defaults to false
-individualLayers: defaults to false
-autoChangeRenderer: defaults to false
-addTrimPaths: defaults to false
-duration: defaults to 10
-dateBorderCopy: defaults to false
-dashThreshold: defaults to 1
-absoluteZScale: defaults to false
-castsShadows: defaults to false
-acceptsShadows: defaults to false
-lockLayerTransforms: defaults to false
+- **callback:** A function(error, data) that is called after the data has been imported to the browser.
+- **options:** An options object with the following possible properties:
+  - **shapeLayerStyle:** an index number, name or shape layer style object
+  - **drawInsideMapcomp:** defaults to **false**
+  - **autoStrokeWidth:** defaults to **false**
+  - **simplify:** defaults to **true**
+  - **simplyfyByZoomRange:** defaults to **false**
+  - **simplificationZoomOffset:** defaults to **0**
+  - **useTopoSimplificationIfPossible:** defaults to **false**
+  - **individualLayers:** defaults to **false**
+  - **autoChangeRenderer:** defaults to **false**
+  - **addTrimPaths:** defaults to **false**
+  - **duration:** defaults to **10**
+  - **dateBorderCopy:** defaults to **false**
+  - **dashThreshold:** defaults to **1**
+  - **absoluteZScale:** defaults to **false**
+  - **castsShadows:** defaults to **false**
+  - **acceptsShadows:** defaults to **false**
+  - **lockLayerTransforms:** defaults to **false**
 
 ### geolayers3.filesInDir(folder[, filterRegEx[, includeSubDirectories]])
 Returns File objects of all Files in the given folder matching the filter regular expression. It can also include sub directories. 
@@ -304,7 +304,7 @@ Returns File objects of all Files in the given folder matching the filter regula
 - **includeSubDirectories:** Boolean, set to true to include files from sub directories.
 Returns a string.
 
-**geolayers3.readFile(file[, encoding])**
+### geolayers3.readFile(file[, encoding])**
 Reads the contents of a file. 
 
 **Arguments:**
@@ -365,16 +365,16 @@ Use the GEOlayers 3 UI to edit properties of a simple flat javascript object. It
 Show a panel in which you can browse GitHub Repos and perform actions like importing files from it. 
 
 **Arguments:**
-- options: An object that can have the following properties and methods:
-  - title (String) panel title
-  - defaultUser (String) initial GitHub username
-  - defaultRepo (String) initial GitHub repository name
-  - fixedRepo (Boolean) allow the user to change github user and repo or not
-  - flatten (Boolean) initial Flatten folders value
-  - filterText (String) initial text for the browsers filter bar
-  - actionBtnText (String) text to display the button that triggers the action callback, defaults to "Import to GEOlayers"
-  - actionFilter (Function) filter function(item) that should return true if the item is suitable for the action callback, defaults to accepting geojson files
-  - action (Function) function(item, url) to be performed as the user clicks the action button, defaults to importing it the Feature Browser
+- **options:** An object that can have the following properties and methods:
+  - **title (String)** panel title
+  - **defaultUser (String)** initial GitHub username
+  - **defaultRepo (String)** initial GitHub repository name
+  - **fixedRepo (Boolean)** allow the user to change github user and repo or not
+  - **flatten (Boolean)** initial Flatten folders value
+  - **filterText (String)** initial text for the browsers filter bar
+  - **actionBtnText (String)** text to display the button that triggers the action callback, defaults to "Import to GEOlayers"
+  - **actionFilter (Function)** filter function(item) that should return true if the item is suitable for the action callback, defaults to accepting geojson files
+  - **action (Function) function(item, url)** to be performed as the user clicks the action button, defaults to importing it the Feature Browser
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
