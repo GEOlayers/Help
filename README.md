@@ -166,6 +166,38 @@ Watches a file or folder for changes. If a file or folder is allready being watc
 ### geolayers3.unwatch()
 Stops the current watch task.
 
+### geolayers3.addToBrowser(addObj, [callback[, options]])
+Adds fretures to the browser even from a file, a geocoding request, an overpass api query or a geojson object. 
+
+**Arguments:**
+- addObj: Can be one of the following objects:
+- ExtendScript File object referencing a geospatial file
+- Url to a geospatial file. The url should contain the file extension.
+geojson object
+{
+type: "geocode",
+query: "Term to geocode"
+}
+{
+type: "overpass",
+query: "Overpass query"
+}
+{
+type: "osm",
+id: "OpenStreetMap Id (something like node1234 or way4321 or rel1243)"
+}
+{
+type: "geojsonurl",
+url: "Url to geojson"
+}
+- callback: A function(error, data) that is called after the data has been imported to the browser.
+- options: An options object with the following possible properties:
+- returnData boolean: Set to true to return the data in the callback, defaults to false since this can be very slow for larger features.
+- pointGeometries boolean: Return the Feature as a Point representation, which is way faster for complex Geometries.
+- normalizeToFeatureArray boolean: Return an Array of Features instead of possible nested Feature Collections.
+- name string: A name for the root feature or feature collection that is imported.
+- namingProp string: The property that should be used to name all imported features.
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # MapTiler Data
