@@ -295,77 +295,86 @@ castsShadows: defaults to false
 acceptsShadows: defaults to false
 lockLayerTransforms: defaults to false
 
-geolayers3.filesInDir(folder[, filterRegEx[, includeSubDirectories]])
+### geolayers3.filesInDir(folder[, filterRegEx[, includeSubDirectories]])
 Returns File objects of all Files in the given folder matching the filter regular expression. It can also include sub directories. 
-Arguments:
-folder: Extend Script Folder Object.
-filterRegEx: Regular expression to test on the file name.
-includeSubDirectories: Boolean, set to true to include files from sub directories.
+
+**Arguments:**
+- **folder:** Extend Script Folder Object.
+- **filterRegEx:** Regular expression to test on the file name.
+- **includeSubDirectories:** Boolean, set to true to include files from sub directories.
 Returns a string.
 
-geolayers3.readFile(file[, encoding])
+**geolayers3.readFile(file[, encoding])**
 Reads the contents of a file. 
-Arguments:
-file: Extend Script File Object or filename string.
-encoding: String, defaults to UTF8. For details check out the Extend Script Tools Guide
+
+**Arguments:**
+- **file:** Extend Script File Object or filename string.
+- **encoding:** String, defaults to UTF8. For details check out the Extend Script Tools Guide
 Returns a string.
 
-geolayers3.readFileCsv(file[, encoding])
+### geolayers3.readFileCsv(file[, encoding])
 Reads the contents of a .csv or .tsv file. 
-Arguments:
-file: Extend Script File Object or filename string.
-encoding: String, defaults to UTF8. For details check out the Extend Script Tools Guide
+
+**Arguments:**
+- **file:** Extend Script File Object or filename string.
+- **encoding:** String, defaults to UTF8. For details check out the Extend Script Tools Guide
 Returns an Array of rows where each row is an Array of columns.
 
-geolayers3.readFileJson(file[, encoding])
+### geolayers3.readFileJson(file[, encoding])
 Reads the contents .json file. 
-Arguments:
-file: Extend Script File Object or filename string.
-encoding: String, defaults to UTF8. For details check out the Extend Script Tools Guide
+
+**Arguments:**
+- **file:** Extend Script File Object or filename string.
+- **encoding:** String, defaults to UTF8. For details check out the Extend Script Tools Guide
 Returns a JavaScript Object.
 
-geolayers3.writeFile(file, content[, encoding])
+### geolayers3.writeFile(file, content[, encoding])
 Writes a file to disk. 
-Arguments:
-file: Extend Script File Object or filename string.
-content: String to write to the file.
-encoding: String, defaults to UTF8. For details check out the Extend Script Tools Guide
 
-geolayers3.userFolder()
+**Arguments:**
+- **file:** Extend Script File Object or filename string.
+- **content:** String to write to the file.
+- **encoding:** String, defaults to UTF8. For details check out the Extend Script Tools Guide
+
+### geolayers3.userFolder()
 Returns a Folder Object referencing the GEOlayers User Folder.
 
-geolayers3.userFile(fileName)
+### geolayers3.userFile(fileName)
 Returns a File Object referencing a File with the fileName inside the GEOlyers User Folder. 
-Arguments:
-fileName: File 'basename.extension' string.
 
-geolayers3.modalEditObject(obj, callback[, options])
+**Arguments:**
+- **fileName:** File 'basename.extension' string.
+
+### geolayers3.modalEditObject(obj, callback[, options])
 Use the GEOlayers 3 UI to edit properties of a simple flat javascript object. It can handle strings, numbers and booleans. 
-Arguments:
-obj: A simple flat object to edit like: {name: "New York", id: 12, selected: true}
-callback: A function(error, editedObj) that is called after the user applied his edits or canceled.
-options: An options object with the following possible string properties: "title", "message" Both to be displayed in the UI.
 
-geolayers3.modalActions(actions, callback[, options])
+**Arguments:**
+- **obj:** A simple flat object to edit like: {name: "New York", id: 12, selected: true}
+- **callback:** A function(error, editedObj) that is called after the user applied his edits or canceled.
+- **options:** An options object with the following possible string properties: "title", "message" Both to be displayed in the UI.
+
+### geolayers3.modalActions(actions, callback[, options])
 Use the GEOlayers 3 UI to edit properties of a simple flat javascript object. It can handle strings, numbers and booleans. 
-Arguments:
-actions: An array of strings to be displayed as buttons
-callback: A function(error, actionsIndex) that is called after the user clicked one of your action buttons or canceled. The index of the action in the actions array or undefined in case he canceled will be returned as actionsIndex.
-options: An options object with the following possible string properties: "title", "message" Both to be displayed in the UI.
 
-geolayers3.githubBrowser([options])
+**Arguments:**
+- **actions:** An array of strings to be displayed as buttons
+- **callback:** A function(error, actionsIndex) that is called after the user clicked one of your action buttons or canceled. The index of the action in the actions array or undefined in case he canceled will be returned as actionsIndex.
+- **options:** An options object with the following possible string properties: "title", "message" Both to be displayed in the UI.
+
+### geolayers3.githubBrowser([options])
 Show a panel in which you can browse GitHub Repos and perform actions like importing files from it. 
-Arguments:
-options: An object that can have the following properties and methods:
-title (String) panel title
-defaultUser (String) initial GitHub username
-defaultRepo (String) initial GitHub repository name
-fixedRepo (Boolean) allow the user to change github user and repo or not
-flatten (Boolean) initial Flatten folders value
-filterText (String) initial text for the browsers filter bar
-actionBtnText (String) text to display the button that triggers the action callback, defaults to "Import to GEOlayers"
-actionFilter (Function) filter function(item) that should return true if the item is suitable for the action callback, defaults to accepting geojson files
-action (Function) function(item, url) to be performed as the user clicks the action button, defaults to importing it the Feature Browser
+
+**Arguments:**
+- options: An object that can have the following properties and methods:
+  - title (String) panel title
+  - defaultUser (String) initial GitHub username
+  - defaultRepo (String) initial GitHub repository name
+  - fixedRepo (Boolean) allow the user to change github user and repo or not
+  - flatten (Boolean) initial Flatten folders value
+  - filterText (String) initial text for the browsers filter bar
+  - actionBtnText (String) text to display the button that triggers the action callback, defaults to "Import to GEOlayers"
+  - actionFilter (Function) filter function(item) that should return true if the item is suitable for the action callback, defaults to accepting geojson files
+  - action (Function) function(item, url) to be performed as the user clicks the action button, defaults to importing it the Feature Browser
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
