@@ -26,6 +26,25 @@ Whenever you open a project that already contains Mapcomps you can see and selec
 
 As you hover over a Mapcomp the following buttons appear:
 
+# Scripting API
+There is an extend script API that you can use to automate tasks with GEOlayers. Feel free to get in touch and tell us what you need to create automated workflows. In general, the GEOlayers panel needs to be open when you want to call any function of the API.
+
+Find an overview of the functions the API exposes:
+
+### geolayers3.importProject(file[, isLabelTemplateProject])
+Import a project to your current one. GEOlayers will sort everything into its project structure, take care of unique comp names and update expressions accordingly. 
+Arguments:
+file: A File object referencing an .aep or .aet file.
+isLabelTemplateProject: Boolean, set to true if the project to import only contains Label Templates.
+
+### geolayers3.finalize(comps, callback[, options])
+Use it to finalize Mapcomps. 
+Arguments:
+comps: Either one or an array of Mapcomp names, Mapcomps or comps that contain Mapcomps, or undefined to finalize all Mapcomps in the project.
+callback: A function (error, mapcomps) that is called async when all finalizations are done.
+options: An options object with the following possible boolean properties: "onlyCurrentFrame", "previewQuality", "onlyWorkArea" and "purgeImageryCache".
+Note that this is an async function. This means any scripting that has to be done after the finalization needs to be placed inside the callback function. It takes an error as the first and the finalized compositions as the second argument and is called after all finalizations are done.
+
 
 # MapTiler Data
 Some functions of GEOlayers are only possible because we partnered with MapTiler as a data provider.
