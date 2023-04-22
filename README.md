@@ -48,15 +48,16 @@ Note that this is an async function. This means any scripting that has to be don
 
 ### geolayers3.duplicate(comp[, options])
 Use it to duplicate Mapcomps or comps that contain Mapcomps. This method also updates all related expressions. 
-Arguments:
+**Arguments:**
 - comp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
 - options: An options object. Use it for naming the duplicates. If you're duplicating a Mapcomp use the property "newName". If you duplicate a containing comp use "newContainingCompName"
 
 This function returns the duplicate comp or undefined if anything goes wrong.
 
 ### geolayers3.setViewAtTime(comp, view[, forceKeyframe[, time]])
-Use it to set or animate views of Mapcomps. 
-Arguments:
+Use it to set or animate views of Mapcomps.
+
+**Arguments:**
 - comp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
 - view: An object with the following float properties: "latitude", "longitude", "zoom", "bearing" and "pitch".
 - forceKeyframe: Set this to true to set a keyframe even if the property is not keyframed yet.
@@ -67,7 +68,7 @@ This function returns the applied view object or undefined if anything goes wron
 ### geolayers3.fitViewAtTime(comp, bbox[, forceKeyframe[, time]])
 Use it to set or animate views of Mapcomps by a bounding box. 
 
-Arguments:
+**Arguments:**
 - comp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
 - bbox: A geojson bounding box Array [LongitudeMin, LatitudeMin, LongitudeMax, LatitudeMax] (WGS 84)
 - forceKeyframe: Set this to true to set a keyframe even if the property is not keyframed yet.
@@ -86,6 +87,7 @@ Returns all mapcomps of the project.
 
 ### geolayers3.getMapcompAnchor(mapcomp)
 Returns the mapcomp's anchor layer in their containing comp. 
+
 **Arguments:**
 - mapcomp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
 
