@@ -29,6 +29,8 @@ As you hover over a Mapcomp the following buttons appear:
 # Scripting API
 There is an extend script API that you can use to automate tasks with GEOlayers. Feel free to get in touch and tell us what you need to create automated workflows. In general, the GEOlayers panel needs to be open when you want to call any function of the API.
 
+Download Scripting Examples [here](https://geolayers3-live.firebaseapp.com/scriptingApiExamples.zip)
+
 Find an overview of the functions the API exposes:
 
 ### geolayers3.importProject(file[, isLabelTemplateProject])
