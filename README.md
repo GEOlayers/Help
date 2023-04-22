@@ -33,7 +33,6 @@ Find an overview of the functions the API exposes:
 
 ### geolayers3.importProject(file[, isLabelTemplateProject])
 Import a project to your current one. GEOlayers will sort everything into its project structure, take care of unique comp names and update expressions accordingly. 
-
 Arguments:
   - file: A File object referencing an .aep or .aet file.
   - isLabelTemplateProject: Boolean, set to true if the project to import only contains Label Templates.
