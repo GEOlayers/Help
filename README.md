@@ -171,8 +171,8 @@ Adds fretures to the browser even from a file, a geocoding request, an overpass 
 
 **Arguments:**
 - addObj: Can be one of the following objects:
-- ExtendScript File object referencing a geospatial file
-- Url to a geospatial file. The url should contain the file extension.
+  - ExtendScript File object referencing a geospatial file
+  - Url to a geospatial file. The url should contain the file extension.
 
 ```
 geojson object
