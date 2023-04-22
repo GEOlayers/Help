@@ -376,6 +376,8 @@ Show a panel in which you can browse GitHub Repos and perform actions like impor
   - **actionFilter (Function)** filter function(item) that should return true if the item is suitable for the action callback, defaults to accepting geojson files
   - **action (Function) function(item, url)** to be performed as the user clicks the action button, defaults to importing it the Feature Browser
 
+Download Scripting Examples [here](https://geolayers3-live.firebaseapp.com/scriptingApiExamples.zip)
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # MapTiler Data
