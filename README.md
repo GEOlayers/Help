@@ -248,13 +248,15 @@ Draws features which are selected in the browser of the GEOlayers 3 panel to a M
   - **acceptsShadows:** defaults to **false**
   - **lockLayerTransforms:** defaults to **false**
 
-geolayers3.draw(comp, addObj, [callback[, options]])
+### geolayers3.draw(comp, addObj, [callback[, options]])
 Draws features to a Mapcomp. Features are specified with an addObj like in the .addToBrowser() method. 
-Arguments:
-comp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
-addObj: Can be one of the following objects:
+**Arguments:**
+- **comp:** A Mapcomp name, Mapcomp or comp that contains a Mapcomp
+- **addObj:** Can be one of the following objects:
+
 ExtendScript File object referencing a geospatial file
 Url to a geospatial file. The url should contain the file extension.
+```
 geojson object
 {
 type: "geocode",
@@ -272,6 +274,7 @@ id: "OpenStreetMap Id (something like node1234 or way4321 or rel1243)"
 type: "geojsonurl",
 url: "Url to geojson"
 }
+```
 callback: A function(error, data) that is called after the data has been imported to the browser.
 options: An options object with the following possible properties:
 shapeLayerStyle: an index number, name or shape layer style object
