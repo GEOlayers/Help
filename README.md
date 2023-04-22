@@ -51,6 +51,7 @@ Use it to duplicate Mapcomps or comps that contain Mapcomps. This method also up
 Arguments:
 - comp: A Mapcomp name, Mapcomp or comp that contains a Mapcomp
 - options: An options object. Use it for naming the duplicates. If you're duplicating a Mapcomp use the property "newName". If you duplicate a containing comp use "newContainingCompName"
+
 This function returns the duplicate comp or undefined if anything goes wrong.
 
 # MapTiler Data
