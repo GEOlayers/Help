@@ -29,7 +29,7 @@ As you hover over a Mapcomp the following buttons appear:
 # Scripting API
 There is an extend script API that you can use to automate tasks with GEOlayers. Feel free to get in touch and tell us what you need to create automated workflows. In general, the GEOlayers panel needs to be open when you want to call any function of the API.
 
-Download Scripting Examples [here](https://geolayers3-live.firebaseapp.com/scriptingApiExamples.zip)
+Download Scripting Examples [here](https://geolayers3-v2-prod.web.app/scriptingApiExamples.zip)
 
 Find an overview of the functions the API exposes:
 
@@ -96,13 +96,33 @@ Returns the mapcomp's anchor layer in their containing comp.
 ### geolayers3.getLabelTemplateComps()
 Returns the projects Label Template Compostioions or an empty Array.
 
-### geolayers3.addLabel(comp, labelTemplateComp, labelData)
+### geolayers3.snapLayerToMapcomp(comp, layer, coordinates, [options])
+Use it to snap any layer to a Mapcomp. Snapped layers will follow the mapcomp's viewport transformations and optionally animate along a specified path.
+
+**Arguments:**
+- **comp:** A Mapcomp name, Mapcomp or comp that contains a Mapcomp
+- **layer:** The layer to snap to the Mapcomp
+- **coordinates:** An optional array [longitude, latitude] or an array of such arrays for a path that the layer should be animated along.
+- **options:** An options object with the following possible properties:
+  - **scaleWithMap:** A boolean indicating whether the layer should scale with the map. Default is true.
+  - **rotateWithMap:** A boolean indicating whether the layer should rotate with the map. Default is true.
+  - **rotateAlongPath:** A boolean indicating whether the layer should rotate along the path. Default is true.
+  - **bearingOffset:** A number specifying the bearing offset in degrees. Default is 0.
+  - **threeDLayer:** A boolean indicating whether the layer should be set to 3D. Default is true.
+  - **duration:** A number in seconds specifying the duration of the path animation if an array of coordinates is provided.
+
+This function returns the snapped layer or undefined if anything goes wrong.
+
+### geolayers3.addLabel(comp, labelTemplateComp, labelData, [coordinates, [options]])
 Use it to add Labels to Mapcomps.
 
 **Arguments:**
 - **comp:** A Mapcomp name, Mapcomp or comp that contains a Mapcomp
-- **labelTemplateComp:** A composition, label template name or an integer representing the number of the label template in the project.
+- **labelTemplateComp:** A composition, label template name or an integer representing the number of the label template in the project. Can also be null to add a null layer instead.
 - **labelData:** An object with the following required float properties: "latitude" or "lat" and "longitude" or "lon" plus the string properties the label template requires like "name" ect.
+- **coordinates:** An optional array [longitude, latitude] or an array of such arrays for a path that the label should be animated along.
+- **options:** An options object with the following possible properties:
+  - **duration:** A number in seconds specifying the duration of the path animation if an array of coordinates is provided.
 
 This function returns the label layer or undefined if anything goes wrong.
 
@@ -230,7 +250,7 @@ Draws features which are selected in the browser of the GEOlayers 3 panel to a M
 
 **Arguments:**
 - **comp:** A Mapcomp name, Mapcomp or comp that contains a Mapcomp
-- **callback:** A function(error, data) that is called after the data has been imported to the browser.
+- **callback:** A function(error, data) that is called after the data has been drawn.
 - **options:** An options object with the following possible properties:
   - **shapeLayerStyle:** an index number, name or shape layer style object
   - **drawInsideMapcomp:** defaults to **false**
@@ -277,7 +297,7 @@ type: "geojsonurl",
 url: "Url to geojson"
 }
 ```
-- **callback:** A function(error, data) that is called after the data has been imported to the browser.
+- **callback:** A function(error, data) that is called after the data has been drawn.
 - **options:** An options object with the following possible properties:
   - **shapeLayerStyle:** an index number, name or shape layer style object
   - **drawInsideMapcomp:** defaults to **false**
@@ -356,7 +376,7 @@ Use the GEOlayers 3 UI to edit properties of a simple flat javascript object. It
 - **options:** An options object with the following possible string properties: "title", "message" Both to be displayed in the UI.
 
 ### geolayers3.modalActions(actions, callback[, options])
-Use the GEOlayers 3 UI to edit properties of a simple flat javascript object. It can handle strings, numbers and booleans. 
+Use the GEOlayers 3 UI to let the user choose one of a certain number of actions. 
 
 **Arguments:**
 - **actions:** An array of strings to be displayed as buttons
@@ -378,7 +398,7 @@ Show a panel in which you can browse GitHub Repos and perform actions like impor
   - **actionFilter (Function)** filter function(item) that should return true if the item is suitable for the action callback, defaults to accepting geojson files
   - **action (Function) function(item, url)** to be performed as the user clicks the action button, defaults to importing it the Feature Browser
 
-Download Scripting Examples [here](https://geolayers3-live.firebaseapp.com/scriptingApiExamples.zip)
+Download Scripting Examples [here](https://geolayers3-v2-prod.web.app/scriptingApiExamples.zip)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
